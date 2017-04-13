@@ -1,1 +1,1 @@
-monidog-lootfilter
+Lootfilter for Path of Exile!
