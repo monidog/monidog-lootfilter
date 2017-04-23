@@ -11,23 +11,23 @@ Show
     SetTextColor 231 180 120
     SetBackgroundColor 8 8 8 240
     SetBorderColor 117 97 73 0
-    SetFontSize 34
+    SetFontSize 35
 
 # Mirror of Kalandra
 Show
     BaseType "Mirror of Kalandra"
-    SetTextColor 255 172 187
-    SetBackgroundColor 186 21 126
-    SetBorderColor 255 192 203
+    SetTextColor 255 128 190
+    SetBackgroundColor 186 21 102
+    SetBorderColor 255 128 190
     SetFontSize 45
     PlayAlertSound 5 300
 
 # Ancient Reliquary Key
 Show
     BaseType "Ancient Reliquary Key"
-    SetTextColor 255 160 56
-    SetBackgroundColor 130 78 21
-    SetBorderColor 255 165 0
+    SetTextColor 240 133 37
+    SetBackgroundColor 110 62 19
+    SetBorderColor 240 133 37
     SetFontSize 45
     PlayAlertSound 5 300
 
@@ -72,8 +72,8 @@ Show
     LinkedSockets >= 5
     Rarity = Unique
     SetTextColor 255 255 255
-    SetBackgroundColor 173 92 0
-    SetBorderColor 219 183 139
+    SetBackgroundColor 138 75 3
+    SetBorderColor 200 200 200
     SetFontSize 44
     PlayAlertSound 4 300
 
@@ -192,14 +192,71 @@ Show
     SetBorderColor 50 230 100
     SetFontSize 38
 
-# Essences
+# Section: Essences
+
+# Tier 1 Essences
 Show
-    Class "Currency"
-    BaseType "Essence" "Remnant of Corruption"
-    SetTextColor 18 72 125
-    SetBackgroundColor 140 189 212
-    SetBorderColor 27 81 135
+    BaseType "Whispering"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 36
+
+# Tier 2 Essences
+Show
+    BaseType "Muttering"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 37
+
+# Tier 3 Essences
+Show
+    BaseType "Weeping"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 38
+
+# Tier 4 Essences
+Show
+    BaseType "Wailing"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 39
+
+# Tier 5 Essences
+Show
+    BaseType "Screaming"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
     SetFontSize 40
+
+# Tier 6 Essences
+Show
+    BaseType "Shrieking"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 41
+
+# Tier 7 Essences
+Show
+    BaseType "Deafening"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 42
+
+# Corruption Essences
+Show
+    BaseType "Remnant of Corruption" "Essence of Hysteria" "Essence of Insanity" "Essence of Horror" "Essence of Delirium"
+    SetTextColor 184 218 242
+    SetBackgroundColor 45 93 140 240
+    SetBorderColor 184 218 242
+    SetFontSize 45
 
 # Section: Base Currency
 
@@ -216,7 +273,7 @@ Show
 # Quest Items
 Show
     Class "Quest Items"
-    SetBackgroundColor 3 36 3 240
+    SetBackgroundColor 5 56 5 240
     SetBorderColor 74 230 58
     SetFontSize 45
 
@@ -232,7 +289,7 @@ Show
 
 # Low Tier Maps
 Show
-    DropLevel >= 68
+    DropLevel >= 58
     DropLevel <= 72
     Class "Maps"
     SetBackgroundColor 38 38 38 240
@@ -258,21 +315,35 @@ Show
 
 # Sacrifices
 Show
-    Class "Map Fragments" "Map Fragment"
     BaseType "Sacrifice at Dawn" "Sacrifice at Noon" "Sacrifice at Dusk"
     SetTextColor 176 82 105
-    SetBackgroundColor 59 6 19
+    SetBackgroundColor 59 6 19 240
     SetBorderColor 176 82 105
     SetFontSize 42
 
 # Midnight Sacrifice
 Show
-    Class "Map Fragments" "Map Fragment"
     BaseType "Sacrifice at Midnight"
     SetTextColor 176 82 105
-    SetBackgroundColor 59 6 19
+    SetBackgroundColor 59 6 19 240
     SetBorderColor 176 82 105
     SetFontSize 45
+
+# Mortal
+Show
+    BaseType "Mortal Grief" "Mortal Hope" "Mortal Ignorance" "Mortal Rage"
+    SetTextColor 61 143 102
+    SetBackgroundColor 6 48 28 240
+    SetBorderColor 61 143 102
+    SetFontSize 42
+
+# Keys
+Show
+    BaseType "Eber's Key" "Volkuur's Key" "Yriel's Key" "Inya's Key"
+    SetTextColor 116 86 161
+    SetBackgroundColor 25 6 48 240
+    SetBorderColor 116 86 161
+    SetFontSize 42
 
 # Map Fragments
 Show
@@ -332,7 +403,8 @@ Show
 # Special Gems
 Show
     BaseType "Enhance" "Enlighten" "Empower"
-    SetBackgroundColor 0 0 0
+    SetTextColor 27 162 155
+    SetBackgroundColor 3 38 37 240
     SetBorderColor 27 162 155
     SetFontSize 42
 
@@ -340,13 +412,17 @@ Show
 Show
     Quality >= 1
     Class "Gem"
-    SetBackgroundColor 0 0 0
+    SetTextColor 27 162 155
+    SetBackgroundColor 3 38 37 240
     SetBorderColor 27 162 155
     SetFontSize 36
 
 # Gems
 Show
     Class "Active Skill Gems" "Support Skill Gems"
+    SetTextColor 27 162 155
+    SetBackgroundColor 3 38 37 240
+    SetBorderColor 0 0 0 0
     SetFontSize 36
 
 # Section: Cards & Fishing Rod
@@ -356,7 +432,7 @@ Show
     Class "Card"
     SetTextColor 255 255 255
     SetBackgroundColor 91 129 153 240
-    SetBorderColor 12 76 97
+    SetBorderColor 29 65 102
     SetFontSize 38
     PlayAlertSound 9 300
 
@@ -384,7 +460,7 @@ Show
     LinkedSockets >= 5
     Rarity = Magic
     SetTextColor 255 255 255
-    SetBackgroundColor 54 100 146
+    SetBackgroundColor 35 68 102
     SetBorderColor 255 255 255
     SetFontSize 44
 
@@ -393,7 +469,7 @@ Show
     LinkedSockets >= 5
     Rarity = Rare
     SetTextColor 255 255 255
-    SetBackgroundColor 194 168 19
+    SetBackgroundColor 153 134 24
     SetBorderColor 255 255 255
     SetFontSize 44
 
@@ -456,7 +532,6 @@ Show
 # Crafting Bases 1
 Show
     BaseType "Vaal Regalia"
-    ItemLevel >= 84
     SetBackgroundColor 16 44 71 240
     SetBorderColor 136 136 255
     SetFontSize 38
