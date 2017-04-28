@@ -64,6 +64,7 @@ Show
     SetBackgroundColor 138 117 47 240
     SetBorderColor 224 214 137
     SetFontSize 40
+    PlayAlertSound 2 250
 
 # Section: Uniques
 
@@ -120,7 +121,7 @@ Show
     Rarity = Unique
     SetTextColor 204 109 0
     SetBackgroundColor 41 23 2
-    SetBorderColor 155 209 209 251
+    SetBorderColor 149 219 202
     SetFontSize 44
 
 # All Other Uniques
@@ -200,7 +201,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 36
+    SetFontSize 35
 
 # Tier 2 Essences
 Show
@@ -208,7 +209,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 37
+    SetFontSize 36
 
 # Tier 3 Essences
 Show
@@ -216,7 +217,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 38
+    SetFontSize 37
 
 # Tier 4 Essences
 Show
@@ -224,7 +225,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 39
+    SetFontSize 38
 
 # Tier 5 Essences
 Show
@@ -232,7 +233,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 40
+    SetFontSize 39
 
 # Tier 6 Essences
 Show
@@ -240,7 +241,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 41
+    SetFontSize 40
 
 # Tier 7 Essences
 Show
@@ -248,7 +249,7 @@ Show
     SetTextColor 184 218 242
     SetBackgroundColor 45 93 140 240
     SetBorderColor 184 218 242
-    SetFontSize 42
+    SetFontSize 41
 
 # Corruption Essences
 Show
@@ -281,7 +282,7 @@ Show
 Show
     Class "Labyrinth Trinket" "Labyrinth Item" "Labyrinth Map Item"
     SetTextColor 74 230 58
-    SetBackgroundColor 10 71 21 240
+    SetBackgroundColor 5 56 5 240
     SetBorderColor 74 230 58
     SetFontSize 42
 
@@ -293,7 +294,7 @@ Show
     DropLevel <= 72
     Class "Maps"
     SetBackgroundColor 38 38 38 240
-    SetBorderColor 255 255 255
+    SetBorderColor 200 200 200
     SetFontSize 40
 
 # Mid Tier Maps
@@ -487,11 +488,11 @@ Show
     LinkedSockets >= 3
     SocketGroup "RGB"
     SetTextColor 214 214 214
-    SetBackgroundColor 43 43 43 240
-    SetBorderColor 25 184 96
+    SetBackgroundColor 49 54 45 240
+    SetBorderColor 99 201 26
     SetFontSize 36
 
-# Section: Quality
+# Section: 20% Quality
 
 # Blacksmith's Whetstones & Armorer's Scraps
 Show
@@ -511,25 +512,206 @@ Show
     SetBorderColor 170 158 130
     SetFontSize 36
 
-# Glassblower's Baubles (Vendor 40% Total Quality)
+# Section: Flasks
+
+# Utility Flasks
 Show
     Quality >= 1
     Class "Utility Flasks"
-    SetTextColor 155 209 209 251
-    SetBackgroundColor 43 43 43 240
-    SetBorderColor 155 209 209 251
-    SetFontSize 40
+    Rarity = Magic
+    SetTextColor 101 201 43
+    SetBackgroundColor 33 66 15 240
+    SetBorderColor 101 201 43
+    SetFontSize 35
 
-# Glassblower's Baubles (Vendor 40% Total Quality)
+# Quality Normal Utility Flasks
 Show
     Quality >= 1
-    Class "Flask"
-    SetBackgroundColor 43 43 43 240
-    SetBorderColor 166 157 138
+    Class "Utility Flasks"
+    Rarity = Normal
+    SetTextColor 230 230 230
+    SetBackgroundColor 33 66 15 240
+    SetBorderColor 101 201 43
+    SetFontSize 35
+
+# Magic Utility Flasks
+Show
+    Class "Utility Flasks"
+    Rarity = Magic
+    SetTextColor 101 201 43
+    SetBackgroundColor 33 66 15 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 34
+
+# Normal Utility Flasks
+Show
+    Class "Utility Flasks"
+    Rarity = Normal
+    SetTextColor 230 230 230
+    SetBackgroundColor 33 66 15 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 34
+
+# Section: Life Flasks
+
+# Quality Magic Life Flasks
+Show
+    Quality >= 1
+    Class "Life Flasks"
+    Rarity = Magic
+    SetTextColor 224 117 117
+    SetBackgroundColor 61 17 17 240
+    SetBorderColor 224 117 117
+    SetFontSize 34
+
+# Quality Normal Life Flasks
+Show
+    Quality >= 1
+    Class "Life Flasks"
+    Rarity = Normal
+    SetTextColor 200 200 200
+    SetBackgroundColor 61 17 17 240
+    SetBorderColor 224 117 117
+    SetFontSize 34
+
+Hide
+    BaseType "Eternal Life Flask" "Divine Life Flask"
+    ItemLevel >= 75
+    SetBackgroundColor 17 17 17 100
+    SetFontSize 22
+
+Hide
+    BaseType "Hallowed Life Flask"
+    ItemLevel >= 65
+    SetBackgroundColor 17 17 17 100
+    SetFontSize 22
+
+# Better Magic Life Flasks
+Show
+    Class "Life Flasks"
+    BaseType "Hallowed Life Flask" "Eternal Life Flask" "Divine Life Flask"
+    Rarity = Magic
+    SetTextColor 224 117 117
+    SetBackgroundColor 61 17 17 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 34
+
+# Better Normal Life Flasks
+Show
+    Class "Life Flasks"
+    BaseType "Hallowed Life Flask" "Eternal Life Flask" "Divine Life Flask"
+    Rarity = Normal
+    SetTextColor 200 200 200
+    SetBackgroundColor 61 17 17 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 34
+
+# Magic Life Flasks
+Show
+    Class "Life Flasks"
+    Rarity = Magic
+    ItemLevel <= 60
+    SetTextColor 224 117 117
+    SetBackgroundColor 61 17 17 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 32
+
+# Normal Life Flasks
+Show
+    Class "Life Flasks"
+    Rarity = Normal
+    ItemLevel <= 60
+    SetTextColor 200 200 200
+    SetBackgroundColor 61 17 17 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 32
+
+# Section: Hybrid Flasks
+
+# Quality Magic Hybrid Flasks
+Show
+    Quality >= 1
+    Class "Hybrid Flasks"
+    Rarity = Magic
+    SetTextColor 219 125 161
+    SetBackgroundColor 77 14 38 240
+    SetBorderColor 219 125 161
+    SetFontSize 32
+
+# Quality Normal Hybrid Flasks
+Show
+    Quality >= 1
+    Class "Hybrid Flasks"
+    Rarity = Normal
+    SetTextColor 199 199 199
+    SetBackgroundColor 77 14 38 240
+    SetBorderColor 219 125 161
+    SetFontSize 32
+
+# Magic Hybrid Flasks
+Show
+    Class "Hybrid Flasks"
+    Rarity = Magic
+    ItemLevel <= 60
+    SetTextColor 219 125 161
+    SetBackgroundColor 77 14 38 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 32
+
+# Normal Hybrid Flasks
+Show
+    Class "Hybrid Flasks"
+    Rarity = Normal
+    ItemLevel <= 60
+    SetTextColor 199 199 199
+    SetBackgroundColor 77 14 38 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 32
+
+# Section: Mana Flasks
+
+# Quality Mana Flasks
+Show
+    Quality >= 1
+    Class "Mana Flasks"
+    SetTextColor 131 143 194
+    SetBackgroundColor 10 16 38 240
+    SetBorderColor 108 120 168
+    SetFontSize 32
+
+# Quality Normal Mana Flasks
+Show
+    Quality >= 1
+    Class "Mana Flasks"
+    Rarity = Normal
+    SetTextColor 199 199 199
+    SetBackgroundColor 10 16 38 240
+    SetBorderColor 108 120 168
+    SetFontSize 32
+
+# Magic Mana Flasks
+Show
+    Class "Mana Flasks"
+    Rarity = Magic
+    ItemLevel <= 60
+    SetTextColor 131 143 194
+    SetBackgroundColor 10 16 38 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 32
+
+# Normal Mana Flasks
+Show
+    Class "Mana Flasks"
+    Rarity = Normal
+    ItemLevel <= 60
+    SetTextColor 199 199 199
+    SetBackgroundColor 10 16 38 240
+    SetBorderColor 0 0 0 0
+    SetFontSize 32
 
 # Section: Vaal Regalia
 
-# Crafting Bases 1
+# Vaal Regalia
 Show
     BaseType "Vaal Regalia"
     SetBackgroundColor 16 44 71 240
@@ -567,7 +749,7 @@ Show
     ItemLevel >= 60
     ItemLevel < 75
     SetBorderColor 178 178 76
-    SetFontSize 42
+    SetFontSize 40
 
 Show
     Identified False
@@ -613,7 +795,7 @@ Show
     SetTextColor 255 255 119
     SetBackgroundColor 0 0 0
     SetBorderColor 54 100 146
-    SetFontSize 42
+    SetFontSize 40
 
 Show
     Identified False
@@ -668,43 +850,12 @@ Hide
 Show
     Class "Rings" "Amulets" "Belts"
     Rarity = Rare
-    SetFontSize 40
+    SetFontSize 38
 
 # Rare Items
 Show
     Rarity = Rare
     SetFontSize 34
-
-# Section: Flasks
-
-# Useful Flasks
-Show
-    Class "Utility Flasks"
-    SetTextColor 155 209 209 251
-    SetFontSize 38
-
-Hide
-    BaseType "Eternal Life Flask" "Divine Life Flask"
-    ItemLevel >= 75
-    SetFontSize 35
-
-Show
-    BaseType "Eternal Life Flask" "Divine Life Flask"
-    SetFontSize 35
-
-Hide
-    BaseType "Hallowed Life Flask"
-    ItemLevel >= 65
-    SetFontSize 35
-
-Show
-    BaseType "Hallowed Life Flask"
-    SetFontSize 35
-
-Show
-    Class "Life Flasks" "Mana Flasks" "Hybrid Flasks"
-    ItemLevel <= 60
-    SetFontSize 33
 
 # Section: Drop Level
 
