@@ -14,6 +14,8 @@ Show
     SetBorderColor 255 34 34 # Valuable Currency
     SetFontSize 45
     PlayAlertSound 4 300
+    MinimapIcon 0 Red Hexagon
+    PlayEffect Red
 
 # ===============================================================================================================
 # SHAPER ITEMS
@@ -256,16 +258,48 @@ Show # $Rare->Elder->T3 $x->ShaperElder
     PlayAlertSound 2 300
 
 # ===============================================================================================================
-# Incursion Mods
+# Special Mods
 # ===============================================================================================================
 
+Show # Delve Mod Items
+    Identified True
+    Rarity = Rare
+    HasExplicitMod "of Crafting" "of Spellcraft" "of Weaponcraft" "of the Underground" "Subterranean"
+    SetTextColor 255 190 0 # TEXTCOLOR: Rare 75+
+    SetBackgroundColor 0 75 30 # BACKGROUND: Rare T1
+    SetBorderColor 0 240 190 240 # BORDERCOLOR: Special Base
+    SetFontSize 45
+    PlayAlertSound 3 300 # DROPSOUND: Unique
+    PlayEffect Blue
+
 Show # Incursion Mod Items
-    Identified  True
-    HasExplicitMod  "Tacati" "Citaqualotl" "Matatl" "Topotante" "Xopec" "Guatelitzi" "Puhuarte"
+    Identified True
+    Rarity = Rare
+    HasExplicitMod "Tacati" "Citaqualotl" "Matatl" "Topotante" "Xopec" "Guatelitzi" "Puhuarte"
+    SetBackgroundColor 48 7 17
+    SetBorderColor 176 82 105
+    SetFontSize 45
+    PlayAlertSound 2 300
+    PlayEffect Red Temp
+
+Show # Incursion Mod Items
+    Identified True
+    Rarity = Magic
+    HasExplicitMod "Tacati" "Citaqualotl" "Matatl" "Topotante" "Xopec" "Guatelitzi" "Puhuarte"
     SetBackgroundColor 48 7 17
     SetBorderColor 176 82 105
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect Red Temp
+
+Show # Warband Mod Items
+    Identified True
+    HasExplicitMod "Brinerot" "Mutewind" "Redblade" "Betrayer's" "Deceiver's" "Turncoat's"
+    SetTextColor 0 240 190 240 # TEXTCOLOR: Special
+    SetBorderColor 0 240 190 240 # BORDERCOLOR: Special Base
+    SetFontSize 45
+    PlayAlertSound 3 300 # DROPSOUND: Unique
+    PlayEffect Blue
 
 # ===============================================================================================================
 # Recipes, Magic and Normal Items (endgame!)
@@ -283,6 +317,7 @@ Show # $recipe->6S $linked->5L
     SetBorderColor 30 200 200
     SetFontSize 44
     PlayAlertSound 2 300
+    PlayEffect Green
 
 Show # $linked->5L %D4
     LinkedSockets = 5
@@ -292,6 +327,7 @@ Show # $linked->5L %D4
     SetBorderColor 0 240 190 240 # 5-Linked
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect Green Temp
 
 Show # $linked->5L $lvl %D5
     LinkedSockets = 5
@@ -300,6 +336,7 @@ Show # $linked->5L $lvl %D5
     SetBorderColor 0 240 190 240 # 5-Linked
     SetFontSize 40
     PlayAlertSound 2 300
+    PlayEffect Green Temp
 
 # ------------------------------------
 # 6-Socket Items
@@ -314,6 +351,7 @@ Show # $EGC->84 $recipe->6S %TB-6S-Rare-Armors
     SetBorderColor 255 255 0
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Yellow Temp
 
 Show # $EGC->83 $recipe->6S %TB-6S-Rare-Weapons
     Sockets = 6
@@ -324,6 +362,7 @@ Show # $EGC->83 $recipe->6S %TB-6S-Rare-Weapons
     SetBorderColor 255 255 0
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Yellow Temp
 
 Show # $recipe->6S $Rare->Regal
     Sockets = 6
@@ -334,6 +373,7 @@ Show # $recipe->6S $Rare->Regal
     SetBorderColor 135 137 137
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect White Temp
 
 Show # $recipe->6S
     Sockets = 6
@@ -343,6 +383,7 @@ Show # $recipe->6S
     SetBorderColor 135 137 137
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect White Temp
 
 # ------------------------------------
 # Stygian Vise
@@ -357,6 +398,7 @@ Show # $rare $x->Abyss->Stygian $EGC->86 %TB-Vise
     SetBorderColor 104 166 62 # Stygian Vise
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Green
 
 Show # $Rare->Regal $Rare->tiny $x->Abyss->Stygian %TB-Vise
     ItemLevel >= 75
@@ -367,6 +409,7 @@ Show # $Rare->Regal $Rare->tiny $x->Abyss->Stygian %TB-Vise
     SetBorderColor 104 166 62 # Stygian Vise
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect Green Temp
 
 Show # $Rare->tiny $x->Abyss->Stygian %TB-Vise %H5
     Rarity <= Rare
@@ -390,6 +433,7 @@ Show # $EGC->82 $x->Abyss->Jewel $Jewels->Rare
     SetBorderColor 104 189 62 # Abyss Jewels
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Green Temp
 
 Show # $EGC->82 $x->Abyss->Jewel $Jewels->Magic %H5
     ItemLevel >= 82
@@ -408,6 +452,7 @@ Show # $x->Abyss->Jewel $Jewels->Rare
     SetBorderColor 104 189 62 # Abyss Jewels
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect Green Temp
 
 Show # $x->Abyss->Jewel $Jewels->Magic %H4
     Rarity <= Magic
@@ -430,6 +475,8 @@ Show # $x->Atlas->T1 $EGC->86 %TB-Top-Atlas-Bases
     SetBorderColor 230 126 7 # Valuable Uniques
     SetFontSize 45
     PlayAlertSound 4 300
+    MinimapIcon 1 Red Diamond
+    PlayEffect Brown
 
 Show # $x->Atlas->T1 %TB-Top-Atlas-Bases
     Rarity <= Rare
@@ -439,6 +486,8 @@ Show # $x->Atlas->T1 %TB-Top-Atlas-Bases
     SetBorderColor 255 125 0
     SetFontSize 45
     PlayAlertSound 4 300
+    MinimapIcon 2 Red Diamond
+    PlayEffect Brown Temp
 
 Show # $x->Atlas->T2 %TB-Atlas-Bases %D5
     ItemLevel >= 86
@@ -449,6 +498,7 @@ Show # $x->Atlas->T2 %TB-Atlas-Bases %D5
     SetBorderColor 255 125 0
     SetFontSize 45
     PlayAlertSound 8 300
+    PlayEffect Brown Temp
 
 Show # $x->Atlas->T2 $Rare->Tiny %TB-Atlas-Bases %D5
     ItemLevel >= 84
@@ -459,6 +509,7 @@ Show # $x->Atlas->T2 $Rare->Tiny %TB-Atlas-Bases %D5
     SetBorderColor 255 125 0
     SetFontSize 45
     PlayAlertSound 8 300
+    PlayEffect Brown Temp
 
 Show # $x->Atlas->T2 $Rare->Tiny %TB-Atlas-Bases %D5
     ItemLevel >= 75
@@ -469,6 +520,7 @@ Show # $x->Atlas->T2 $Rare->Tiny %TB-Atlas-Bases %D5
     SetBorderColor 255 190 0
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Yellow Temp
 
 Show # $x->Atlas->T2 $Rare->Tiny %TB-Atlas-Bases %D5
     Rarity = Rare
@@ -477,6 +529,7 @@ Show # $x->Atlas->T2 $Rare->Tiny %TB-Atlas-Bases %D5
     SetBorderColor 178 178 76
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Yellow Temp
 
 Show # $x->Atlas->T2Exceptions %TB-Atlas-Bases-Exceptions %D5
     Rarity <= Rare
@@ -485,6 +538,7 @@ Show # $x->Atlas->T2Exceptions %TB-Atlas-Bases-Exceptions %D5
     SetBorderColor 178 178 76
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Yellow Temp
 
 # ------------------------------------
 # Talismans
@@ -498,6 +552,7 @@ Show # $x->Talismans %TB-Talisman %D5
     SetBorderColor 13 237 136
     SetFontSize 42
     PlayAlertSound 6 300
+    PlayEffect Green Temp
 
 # ------------------------------------
 # Chancing Items
@@ -511,13 +566,21 @@ Hide
     SetBorderColor 207 118 35 # Chancing Bases
     SetFontSize 35
 
-Show # $Chancing %TB-T2-Chancing %D3
+Hide # $Chancing %TB-T2-Chancing %D3
     Rarity = Normal
     BaseType "Glorious Plate"
     SetTextColor 255 255 255
     SetBackgroundColor 48 29 16 235 # Chancing Bases
     SetBorderColor 207 118 35 # Chancing Bases
     SetFontSize 38
+
+Show # $Chancing %TB-T2-Chancing %D3
+    Rarity = Normal
+    BaseType "Leather Belt"
+    SetTextColor 255 255 255
+    SetBackgroundColor 48 29 16 235 # Chancing Bases
+    SetBorderColor 207 118 35 # Chancing Bases
+    SetFontSize 40
 
 Hide
     Rarity = Normal
@@ -621,74 +684,76 @@ Show # $x->Fish %TC-Secret
     SetBorderColor 255 34 34 # Valuable Currency
     SetFontSize 45
     PlayAlertSound 6 300
+    MinimapIcon 0 Red Diamond
+    PlayEffect Red
 
 # ------------------------------------
 # Regal Recipe
 # ------------------------------------
 
-# Show # $great, tiny %TC - Rare - Trinkets %UP %D5
-#     Identified False
-#     ItemLevel >= 75
-#     Rarity = Rare
-#     Class "Rings" "Amulets" "Belts"
-#     SetBackgroundColor 16 46 74 240 # Regal Recipe
-#     SetBorderColor 54 100 146 # Regal Recipe
-#     SetFontSize 40
+Show # $great, tiny %TC - Rare - Trinkets %UP %D5
+    Identified False
+    ItemLevel >= 75
+    Rarity = Rare
+    Class "Rings" "Amulets" "Belts"
+    SetBackgroundColor 16 46 74 240 # Regal Recipe
+    SetBorderColor 54 100 146 # Regal Recipe
+    SetFontSize 40
 
-# Show # $R - T3, small, autosmall %D2 %TD - Rare - Good - Daggers %UP
-#     Identified False
-#     ItemLevel >= 75
-#     DropLevel >= 50
-#     Rarity = Rare
-#     Class "Daggers" "Wands" "Boots" "Helmets" "Body Armours" "Gloves"
-#     SetBackgroundColor 8 30 51 240 # Regal Recipe
-#     SetBorderColor 54 100 146 # Regal Recipe
-#     SetFontSize 38
+Show # $R - T3, small, autosmall %D2 %TD - Rare - Good - Daggers %UP
+    Identified False
+    ItemLevel >= 75
+    DropLevel >= 50
+    Rarity = Rare
+    Class "Daggers" "Wands" "Boots" "Helmets" "Body Armours" "Gloves"
+    SetBackgroundColor 8 30 51 240 # Regal Recipe
+    SetBorderColor 54 100 146 # Regal Recipe
+    SetFontSize 38
 
-# Show # $R - T3 %D2 %TD - Rare - Good - Swords %UP
-#     Identified False
-#     Height <= 4
-#     ItemLevel >= 75
-#     DropLevel >= 64
-#     Rarity = Rare
-#     Class "One Hand Swords"
-#     SetBackgroundColor 8 30 51 240 # Regal Recipe
-#     SetBorderColor 54 100 146 # Regal Recipe
-#     SetFontSize 38
+Show # $R - T3 %D2 %TD - Rare - Good - Swords %UP
+    Identified False
+    Height <= 4
+    ItemLevel >= 75
+    DropLevel >= 64
+    Rarity = Rare
+    Class "One Hand Swords"
+    SetBackgroundColor 8 30 51 240 # Regal Recipe
+    SetBorderColor 54 100 146 # Regal Recipe
+    SetFontSize 38
 
 # ------------------------------------
 # Chaos Recipe
 # ------------------------------------
 
-# Show
-#     Identified False
-#     ItemLevel >= 65
-#     Rarity = Rare
-#     Class "Rings" "Amulets" "Belts"
-#     SetBackgroundColor 64 64 19 240 # Chaos Recipe
-#     SetBorderColor 178 178 76 # Chaos Recipe
-#     SetFontSize 40
+Show
+    Identified False
+    ItemLevel >= 65
+    Rarity = Rare
+    Class "Rings" "Amulets" "Belts"
+    SetBackgroundColor 64 64 19 240 # Chaos Recipe
+    SetBorderColor 178 178 76 # Chaos Recipe
+    SetFontSize 40
 
-# Show
-#     Identified False
-#     ItemLevel >= 65
-#     DropLevel >= 50
-#     Rarity = Rare
-#     Class "Daggers" "Wands" "Boots" "Gloves" "Body Armours" "Helmets"
-#     SetBackgroundColor 48 48 15 240 # Chaos Recipe
-#     SetBorderColor 178 178 76 # Chaos Recipe
-#     SetFontSize 38
+Show
+    Identified False
+    ItemLevel >= 65
+    DropLevel >= 50
+    Rarity = Rare
+    Class "Daggers" "Wands" "Boots" "Gloves" "Body Armours" "Helmets"
+    SetBackgroundColor 48 48 15 240 # Chaos Recipe
+    SetBorderColor 178 178 76 # Chaos Recipe
+    SetFontSize 38
 
-# Show
-#     Identified False
-#     Height <= 4
-#     ItemLevel >= 65
-#     DropLevel >= 64
-#     Rarity = Rare
-#     Class "One Hand Swords"
-#     SetBackgroundColor 48 48 15 240 # Chaos Recipe
-#     SetBorderColor 178 178 76 # Chaos Recipe
-#     SetFontSize 38
+Show
+    Identified False
+    Height <= 4
+    ItemLevel >= 65
+    DropLevel >= 64
+    Rarity = Rare
+    Class "One Hand Swords"
+    SetBackgroundColor 48 48 15 240 # Chaos Recipe
+    SetBorderColor 178 178 76 # Chaos Recipe
+    SetFontSize 38
 
 # ------------------------------------
 # RGB Group
@@ -773,7 +838,7 @@ Hide # $x->SacGarn %TB-Special-AlwaysShow-Bases %D4
     SetFontSize 34
 
 # ===============================================================================================================
-# HIDE LAYER - MAGIC AND NORMAL ITEMS
+# HIDE LAYER
 # ===============================================================================================================
 
 Hide # Minimize junk instead of hiding (if "Show") %TC-Junkable
@@ -796,6 +861,8 @@ Show # $Currency->Low->T1 %H5 %TB-Currency-SilverCoin
     SetBorderColor 217 168 247 # Silver Coin
     SetFontSize 45
     PlayAlertSoundPositional 10 250
+    MinimapIcon 2 Brown Circle
+    PlayEffect White Temp
 
 Show # $Currency->Low->T1 %H5 %TB-Currency-T4
     Class "Currency"
@@ -890,13 +957,13 @@ Show # $Rare->T1 $Rare->Small %D4 %TB-RARE-T1-WepSmall %UP
     SetBorderColor 0 0 0 0
     SetFontSize 40
 
-Show
-    ItemLevel >= 65
-    Rarity = Rare
-    BaseType "Imperial Claw" "Gemini Claw" "Imbued Wand" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Corsair Sword" "Titan Gauntlets" "Lion Pelt" "Slink Boots" "Titan Greaves" "Royal Burgonet" "Slink Gloves" "Hubris Circlet" "Titanium Spirit Shield" "Crusader Buckler" "Eternal Burgonet" "Goliath Greaves" "Vaal Gauntlets" "Siege Axe" "Opal Sceptre" "Astral Plate" "Archon Kite Shield"
-    SetBackgroundColor 23 23 6 239
-    SetBorderColor 0 0 0 0
-    SetFontSize 38
+#Show
+#    ItemLevel >= 65
+#    Rarity = Rare
+#    BaseType "Imperial Claw" "Gemini Claw" "Imbued Wand" "Ambusher" "Jewelled Foil" "Spiraled Foil" "Corsair Sword" "Titan Gauntlets" "Lion Pelt" "Slink Boots" "Titan Greaves" "Royal Burgonet" "Slink Gloves" "Hubris Circlet" "Titanium Spirit Shield" "Crusader Buckler" "Eternal Burgonet" "Goliath Greaves" "Vaal Gauntlets" "Siege Axe" "Opal Sceptre" "Astral Plate" "Archon Kite Shield"
+#    SetBackgroundColor 23 23 6 239
+#    SetBorderColor 0 0 0 0
+#    SetFontSize 38
 
 # ------------------------------------
 # T2 Rare Items
@@ -911,13 +978,13 @@ Show # $Rare->T2 $Rare->Small %D3 %TB-RARE-T2-WepSmall %UP
     SetBorderColor 0 0 0 0
     SetFontSize 38
 
-Show
-    ItemLevel >= 65
-    Rarity = Rare
-    BaseType "Terror Claw" "Eye Gouger" "Tornado Wand" "Engraved Wand" "Opal Wand" "Kris" "Vaal Rapier" "Fancy Foil" "Dragoon Sword" "Profane Wand" "Skean" "Vaal Axe" "Harbinger Bow" "Vaal Sceptre" "Void Sceptre" "Eternal Sword" "Behemoth Mace" "Vaal Hatchet" "Runic Hatchet" "Sambar Sceptre" "Crusader Boots" "Nightmare Bascinet" "Murder Boots" "Dragonscale Boots" "Vaal Greaves" "Stealth Boots" "Murder Mitts" "Dragonscale Gauntlets" "Crusader Gloves" "Praetor Crown" "Deicide Mask" "Sinner Tricorne" "Arcanist Slippers" "Arcanist Gloves" "Mind Cage" "Sorcerer Boots" "Sorcerer Gloves" "Harmonic Spirit Shield" "Supreme Spiked Shield" "Shagreen Boots" "Imperial Buckler" "Ancient Greaves" "Ancient Gauntlets" "Ezomyte Burgonet" "Glorious Plate" "Saintly Chainmail" "Spike-Point Arrow Quiver" "Vaal Regalia" "Carnal Armour" "Elegant Round Shield" "Pinnacle Tower Shield" "Assassin's Garb" "Broadhead Arrow Quiver" "Mosaic Kite Shield" "Colossal Tower Shield" "Cardinal Round Shield"
-    SetBackgroundColor 23 23 6 239
-    SetBorderColor 0 0 0 0
-    SetFontSize 36
+#Show
+#    ItemLevel >= 65
+#    Rarity = Rare
+#    BaseType "Terror Claw" "Eye Gouger" "Tornado Wand" "Engraved Wand" "Opal Wand" "Kris" "Vaal Rapier" "Fancy Foil" "Dragoon Sword" "Profane Wand" "Skean" "Vaal Axe" "Harbinger Bow" "Vaal Sceptre" "Void Sceptre" "Eternal Sword" "Behemoth Mace" "Vaal Hatchet" "Runic Hatchet" "Sambar Sceptre" "Crusader Boots" "Nightmare Bascinet" "Murder Boots" "Dragonscale Boots" "Vaal Greaves" "Stealth Boots" "Murder Mitts" "Dragonscale Gauntlets" "Crusader Gloves" "Praetor Crown" "Deicide Mask" "Sinner Tricorne" "Arcanist Slippers" "Arcanist Gloves" "Mind Cage" "Sorcerer Boots" "Sorcerer Gloves" "Harmonic Spirit Shield" "Supreme Spiked Shield" "Shagreen Boots" "Imperial Buckler" "Ancient Greaves" "Ancient Gauntlets" "Ezomyte Burgonet" "Glorious Plate" "Saintly Chainmail" "Spike-Point Arrow Quiver" "Vaal Regalia" "Carnal Armour" "Elegant Round Shield" "Pinnacle Tower Shield" "Assassin's Garb" "Broadhead Arrow Quiver" "Mosaic Kite Shield" "Colossal Tower Shield" "Cardinal Round Shield"
+#    SetBackgroundColor 23 23 6 239
+#    SetBorderColor 0 0 0 0
+#    SetFontSize 36
 
 # ------------------------------------
 # Breach Rings
@@ -1080,6 +1147,8 @@ Show # $Gem->T1->Qual %TB-Qual-Top-Gem
     SetBorderColor 74 196 190 # Gems T1
     SetFontSize 45
     PlayAlertSound 6 300
+    MinimapIcon 1 Green Diamond
+    PlayEffect Green
 
 Show # $Gem->Qual->20
     Quality >= 20
@@ -1089,6 +1158,7 @@ Show # $Gem->Qual->20
     SetBorderColor 74 196 190 # Gems T1
     SetFontSize 42
     PlayAlertSound 11 200
+    PlayEffect Green Temp
 
 Show # $Gem->T1 %TB-Top-Gem
     Class "Gems"
@@ -1098,6 +1168,8 @@ Show # $Gem->T1 %TB-Top-Gem
     SetBorderColor 23 135 129 # Gems T2
     SetFontSize 40
     PlayAlertSound 11 202
+    MinimapIcon 2 Green Diamond
+    PlayEffect Green Temp
 
 Show # $Gem->Qual->15
     Quality >= 14
@@ -1125,7 +1197,18 @@ Show # $Gem->T2 %TB-DropOnly-Gem %D5
     SetTextColor 27 162 155 # Gems T2
     SetBackgroundColor 3 38 37 240 # Gems T2
     SetBorderColor 23 135 129 # Gems T2
-    SetFontSize 40
+    SetFontSize 38
+    PlayEffect Green Temp
+
+Show # $Gem %H2
+    ItemLevel <= 16
+    DropLevel <= 12
+    Class "Gems"
+    SetTextColor 27 162 155 # Gems T2
+    SetBackgroundColor 3 38 37 240 # Gems T2
+    SetBorderColor 0 0 0 0
+    SetFontSize 36
+    PlayEffect Green Temp
 
 Hide # $Gem %H2
     Class "Gems"
@@ -1151,6 +1234,8 @@ Show # $uniques->T1 $maps->unique Maps:Unique - T1 - only museum is needed, but 
     SetBorderColor 230 126 7 # Valuable Uniques
     SetFontSize 45
     PlayAlertSound 4 300
+    MinimapIcon 1 Red Triangle
+    PlayEffect Brown
 
 Show # $uniques $maps->unique Maps:Unique
     Rarity = Unique
@@ -1160,6 +1245,8 @@ Show # $uniques $maps->unique Maps:Unique
     SetBorderColor 190 105 9 139 # Uniques
     SetFontSize 40
     PlayAlertSound 16 300
+    MinimapIcon 2 Yellow Triangle
+    PlayEffect Brown Temp
 
 # ------------------------------------
 # Labyrinth items, Offerings
@@ -1172,6 +1259,8 @@ Show # $frag->%TB-OfferingToTheGoddess
     SetBorderColor 74 230 58 # Quest Items
     SetFontSize 42
     PlayAlertSound 2 300
+    MinimapIcon 1 Green Diamond
+    PlayEffect Green
 
 Show
     Class "Labyrinth"
@@ -1179,6 +1268,8 @@ Show
     SetBackgroundColor 4 48 4 238 # Quest Items
     SetBorderColor 74 230 58 # Quest Items
     SetFontSize 42
+    MinimapIcon 1 Green Star
+    PlayEffect Green
 
 # ------------------------------------
 # Shaped Maps
@@ -1193,6 +1284,7 @@ Show # $maps->shaped->Top
     SetBorderColor 210 0 0
     SetFontSize 42
     PlayAlertSound 2 202
+    PlayEffect Red Temp
 
 Show # $maps->shaped->High
     ShapedMap True
@@ -1202,6 +1294,7 @@ Show # $maps->shaped->High
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 Show # $maps->shaped->Mid
     ShapedMap True
@@ -1210,6 +1303,7 @@ Show # $maps->shaped->Mid
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 Show # $maps->elder->Top
     ShapedMap True
@@ -1219,6 +1313,8 @@ Show # $maps->elder->Top
     SetBorderColor 190 105 9 # Uniques
     SetFontSize 44
     PlayAlertSound 11 300
+    MinimapIcon 2 Red Circle
+    PlayEffect Brown Temp
 
 # ------------------------------------
 # Top Tier Maps (T15-T16)
@@ -1232,14 +1328,18 @@ Show # $maps->T16
     SetBorderColor 190 105 9 # Uniques
     SetFontSize 44
     PlayAlertSound 11 300
+    MinimapIcon 1 Red Circle
+    PlayEffect Brown
 
 Show # $maps->T15
     DropLevel >= 82
     Class "Maps"
-    SetBackgroundColor 99 6 6 237 
+    SetBackgroundColor 99 6 6 237
     SetBorderColor 210 0 0
     SetFontSize 45
     PlayAlertSound 2 202
+    MinimapIcon 2 Red Circle
+    PlayEffect Red
 
 # ------------------------------------
 # High Tier Maps(T11-T14)
@@ -1252,6 +1352,8 @@ Show # $maps->T14
     SetBorderColor 210 0 0
     SetFontSize 42
     PlayAlertSound 2 202
+    MinimapIcon 2 Red Circle
+    PlayEffect Red
 
 Show # $maps->T13
     DropLevel >= 80
@@ -1260,6 +1362,7 @@ Show # $maps->T13
     SetBorderColor 210 0 0
     SetFontSize 42
     PlayAlertSound 2 202
+    PlayEffect Red Temp
 
 Show # $maps->T12
     DropLevel >= 79
@@ -1268,6 +1371,7 @@ Show # $maps->T12
     SetBorderColor 210 0 0
     SetFontSize 42
     PlayAlertSound 2 202
+    PlayEffect Red Temp
 
 Show # $maps->T11
     DropLevel >= 78
@@ -1276,6 +1380,7 @@ Show # $maps->T11
     SetBorderColor 210 0 0
     SetFontSize 42
     PlayAlertSound 2 202
+    PlayEffect Red Temp
 
 # ------------------------------------
 # Mid Tier Maps (T6-T10)
@@ -1288,6 +1393,7 @@ Show # $maps->T10
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 # ------------------------------------
 # T9 - Maps
@@ -1301,6 +1407,7 @@ Show # $maps->T9
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 Show # %H4 $maps->outleveled
     DropLevel >= 76
@@ -1321,6 +1428,7 @@ Show # $maps->T8
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 Show # %H4 $maps->outleveled
     DropLevel >= 75
@@ -1328,7 +1436,6 @@ Show # %H4 $maps->outleveled
     SetTextColor 150 150 150
     SetBackgroundColor 48 43 10 199
     SetBorderColor 189 171 74
-
 
 # ------------------------------------
 # T7 - Maps
@@ -1342,6 +1449,7 @@ Show # $maps->T7
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 Show # %H4 $maps->outleveled
     DropLevel >= 74
@@ -1349,7 +1457,6 @@ Show # %H4 $maps->outleveled
     SetTextColor 150 150 150
     SetBackgroundColor 48 43 10 199
     SetBorderColor 189 171 74
-
 
 # ------------------------------------
 # T6 - Maps
@@ -1363,6 +1470,7 @@ Show # $maps->T6
     SetBorderColor 255 215 0
     SetFontSize 40
     PlayAlertSound 2 202
+    PlayEffect Yellow Temp
 
 Show # %H4 $maps->outleveled
     DropLevel >= 73
@@ -1370,7 +1478,6 @@ Show # %H4 $maps->outleveled
     SetTextColor 150 150 150
     SetBackgroundColor 48 43 10 199
     SetBorderColor 189 171 74
-
 
 # ------------------------------------
 # Low Tier Maps (T1-T5)
@@ -1384,6 +1491,7 @@ Show # $maps->T5
     SetBorderColor 200 200 200
     SetFontSize 38
     PlayAlertSound 2 202
+    PlayEffect White Temp
 
 Show # %H3 $maps->outleveled
     DropLevel >= 72
@@ -1404,6 +1512,7 @@ Show # $maps->T4
     SetBorderColor 200 200 200
     SetFontSize 38
     PlayAlertSound 2 202
+    PlayEffect White Temp
 
 Show # %H3 $maps->outleveled
     DropLevel >= 71
@@ -1424,6 +1533,7 @@ Show # $maps->T3
     SetBorderColor 200 200 200
     SetFontSize 38
     PlayAlertSound 2 202
+    PlayEffect White Temp
 
 Show # %H3 $maps->outleveled
     DropLevel >= 70
@@ -1444,6 +1554,7 @@ Show # $maps->T2
     SetBorderColor 200 200 200
     SetFontSize 38
     PlayAlertSound 2 202
+    PlayEffect White Temp
 
 Show # %H3 $maps->outleveled
     DropLevel = 69
@@ -1464,6 +1575,7 @@ Show # $maps->T1
     SetBorderColor 200 200 200
     SetFontSize 38
     PlayAlertSound 2 202
+    PlayEffect White Temp
 
 Show # %H3 $maps->outleveled
     DropLevel < 69
@@ -1478,11 +1590,24 @@ Show # %H3 $maps->outleveled
 
 Show # $x->Legacy->AncientRelicKey
     Class "Misc Map Items"
+    BaseType "Ancient Reliquary Key" "Timeworn Reliquary Key"
+    SetTextColor 230 126 7 # Valuable Uniques
+    SetBackgroundColor 114 62 0 # Valuable Uniques
+    SetBorderColor 230 126 7 # Valuable Uniques
+    SetFontSize 45
+    PlayAlertSound 6 300
+    MinimapIcon 0 Green Diamond
+    PlayEffect Red
+
+Show # $x->Legacy->AncientRelicKey
+    Class "Misc Map Items"
     SetTextColor 254 147 19
     SetBackgroundColor 120 40 0
     SetBorderColor 230 120 0
     SetFontSize 45
     PlayAlertSound 6 300
+    MinimapIcon 2 Yellow Triangle
+    PlayEffect Yellow
 
 Show # $Fragments->T1 $x->Fragments->Mortal %TB-Fragments-T1
     Class "Map Fragments"
@@ -1492,6 +1617,7 @@ Show # $Fragments->T1 $x->Fragments->Mortal %TB-Fragments-T1
     SetBorderColor 82 151 107
     SetFontSize 45
     PlayAlertSound 6 300
+    PlayEffect Green
 
 Show # $Fragments->T2 %TB-Fragments-T2
     Class "Map Fragments"
@@ -1501,15 +1627,19 @@ Show # $Fragments->T2 %TB-Fragments-T2
     SetBorderColor 176 82 105
     SetFontSize 45
     PlayAlertSound 2 300
+    MinimapIcon 2 Red Triangle
+    PlayEffect Red
 
 Show # $Fragments->Vessel %TB-Fragments-Vessel
     Class "Map Fragments"
     BaseType "Divine Vessel"
-    SetTextColor 118 191 219
-    SetBackgroundColor 22 62 79
-    SetBorderColor 118 191 219
+    SetTextColor 118 201 219
+    SetBackgroundColor 17 58 64
+    SetBorderColor 118 210 219
     SetFontSize 45
     PlayAlertSound 2 300
+    MinimapIcon 2 Blue Square
+    PlayEffect Blue
 
 Show # $Fragments
     Class "Map Fragments"
@@ -1518,21 +1648,13 @@ Show # $Fragments
     SetBorderColor 176 82 105
     SetFontSize 42
     PlayAlertSound 2 300
+    PlayEffect Red Temp
 
 Show # $Fragments->Vessel
     Class "Pantheon Soul"
     SetTextColor 22 62 79
     SetBackgroundColor 118 191 219
     SetBorderColor 22 62 79
-    SetFontSize 45
-    PlayAlertSound 2 300
-
-Show # $Fragments->T2 %TB-Fragments-T2
-    Class "Currency"
-    BaseType "Vial of"
-    SetTextColor 176 82 105
-    SetBackgroundColor 83 7 26
-    SetBorderColor 176 82 105
     SetFontSize 45
     PlayAlertSound 2 300
 
@@ -1548,6 +1670,8 @@ Show # $Currency->Harbinger->Top %TB-Currency-T1
     SetBorderColor 255 34 34 # Valuable Currency
     SetFontSize 45
     PlayAlertSound 4 300
+    MinimapIcon 0 Red Diamond
+    PlayEffect Red
 
 Show # $Currency->High-T1 %TB-Currency-T1.5
     Class "Currency"
@@ -1557,6 +1681,9 @@ Show # $Currency->High-T1 %TB-Currency-T1.5
     SetBorderColor 239 188 62
     SetFontSize 42
     PlayAlertSound 2 300
+    DisableDropSound True
+    MinimapIcon 1 Yellow Diamond
+    PlayEffect Yellow
 
 Show # $Currency->High-T2 %TB-Currency-T2
     Class "Currency"
@@ -1566,6 +1693,9 @@ Show # $Currency->High-T2 %TB-Currency-T2
     SetBorderColor 255 248 122
     SetFontSize 41
     PlayAlertSound 2 300
+    DisableDropSound True
+    MinimapIcon 2 Yellow Diamond
+    PlayEffect Yellow Temp
 
 Show # $Currency->High-T3 %TB-Currency-T3
     Class "Currency"
@@ -1575,6 +1705,8 @@ Show # $Currency->High-T3 %TB-Currency-T3
     SetBorderColor 228 186 76
     SetFontSize 40
     PlayAlertSound 12 300
+    DisableDropSound True
+    PlayEffect Yellow Temp
 
 # ------------------------------------
 # Harbinger Currency
@@ -1588,6 +1720,8 @@ Show # $Currency->Harbinger->T1 %TB-Currency-Harbinger-ShardsT1
     SetBorderColor 64 106 237 # Harbinger Piece
     SetFontSize 44
     PlayAlertSound 2 300
+    MinimapIcon 1 Blue Triangle
+    PlayEffect Blue
 
 Show # $Currency->Harbinger->T2 %TB-Currency-Harbinger-ShardsT2 %H4
     Class "Currency"
@@ -1596,6 +1730,72 @@ Show # $Currency->Harbinger->T2 %TB-Currency-Harbinger-ShardsT2 %H4
     SetBackgroundColor 15 21 47 237
     SetBorderColor 43 70 156
     SetFontSize 40
+    PlayEffect Blue Temp
+
+# ------------------------------------
+# Incursion Currency
+# ------------------------------------
+
+Show # $Currency->Incursion->Vial
+    Class "Currency"
+    BaseType "Vial of Awakening" "Vial of Sacrifice" "Vial of the Ghost"
+    SetTextColor 176 82 105
+    SetBackgroundColor 83 7 26
+    SetBorderColor 176 82 105
+    SetFontSize 45
+    PlayAlertSound 2 300
+    MinimapIcon 1 Red Square
+    PlayEffect Red
+
+Show # $Currency->Incursion->Vial
+    Class "Currency"
+    BaseType "Vial of Transcendence" "Vial of Summoning" "Vial of the Ritual" "Vial of Fate" "Vial of Consequence" "Vial of Dominance"
+    SetTextColor 176 82 105
+    SetBackgroundColor 48 7 17
+    SetBorderColor 176 82 105
+    SetFontSize 42
+    PlayAlertSound 2 300
+    MinimapIcon 2 Red Square
+    PlayEffect Red Temp
+
+#------------------------------------
+#   [1904] Delve Currency
+#------------------------------------
+
+Show # $Currency->High-T1 %TB-Currency-T1.5
+    Class "Delve Socketable Currency"
+    BaseType "Prime"
+    SetTextColor 75 169 247
+    SetBackgroundColor 11 73 115
+    SetBorderColor 75 169 247
+    SetFontSize 45
+    PlayAlertSound 11 300
+    DisableDropSound True
+    MinimapIcon 0 Blue Diamond
+    PlayEffect Blue
+
+Show # $Currency->High-T1 %TB-Currency-T1.5
+    Class "Delve Socketable Currency"
+    SetTextColor 56 156 240
+    SetBackgroundColor 8 58 92
+    SetBorderColor 56 156 240
+    SetFontSize 42
+    PlayAlertSound 2 300
+    DisableDropSound True
+    MinimapIcon 1 Blue Diamond
+    PlayEffect Blue
+
+Show # $Currency->High-T2 %TB-Currency-T2
+    Class "Currency"
+    BaseType "Fossil"
+    SetTextColor 56 156 240
+    SetBackgroundColor 6 46 74
+    SetBorderColor 56 156 240
+    SetFontSize 40
+    PlayAlertSound 2 300
+    DisableDropSound True
+    MinimapIcon 2 Blue Diamond
+    PlayEffect Blue
 
 # ------------------------------------
 # Essences
@@ -1609,6 +1809,7 @@ Show # $Currency->Ess->T1 %TB-Essence-T1
     SetBorderColor 41 214 232
     SetFontSize 45
     PlayAlertSound 2 300
+    PlayEffect Blue
 
 Show # $Currency->Ess->T2
     Class "Currency"
@@ -1617,6 +1818,8 @@ Show # $Currency->Ess->T2
     SetBackgroundColor 45 93 140 241
     SetBorderColor 156 195 223
     SetFontSize 43
+    PlayAlertSound 2 300
+    PlayEffect Blue Temp
 
 Show # $Currency->Ess->T3
     Class "Currency"
@@ -1625,6 +1828,7 @@ Show # $Currency->Ess->T3
     SetBackgroundColor 45 93 140 228
     SetBorderColor 156 195 223 227
     SetFontSize 42
+    PlayEffect Blue Temp
 
 Show # $Currency->Ess->T4
     Class "Currency"
@@ -1651,7 +1855,7 @@ Show #$Currency->Ess->T6
     SetFontSize 36
 
 # ------------------------------------
-# Special Items
+# Breach
 # ------------------------------------
 
 Show # $x->Breach->Blessing->T1
@@ -1662,15 +1866,19 @@ Show # $x->Breach->Blessing->T1
     SetBorderColor 86 16 107
     SetFontSize 45
     PlayAlertSound 6 300
+    MinimapIcon 0 Brown Star
+    PlayEffect Blue
 
 Show # $x->Breach->Blessing->T2
     Class "Currency"
     BaseType "Blessing of Xoph" "Blessing of Esh" "Blessing of Tul"
     SetTextColor 66 8 92
-    SetBackgroundColor 139 21 192
+    SetBackgroundColor 152 32 207
     SetBorderColor 66 8 92 239
     SetFontSize 42
     PlayAlertSound 6 201
+    MinimapIcon 2 Brown Star
+    PlayEffect Blue Temp
 
 Show # $x->Breach->Splinter->T1
     Class "Currency"
@@ -1680,15 +1888,41 @@ Show # $x->Breach->Splinter->T1
     SetBorderColor 180 32 214
     SetFontSize 45
     PlayAlertSound 6 300
+    MinimapIcon 0 Brown Diamond
+    PlayEffect Blue
 
 Show # $x->Breach->Splinter->T2 %HS4
     Class "Currency"
     BaseType "Splinter of Xoph" "Splinter of Esh" "Splinter of Tul" "Splinter of Uul-Netol"
-    SetTextColor 171 19 227
+    SetTextColor 189 32 247
     SetBackgroundColor 66 8 92 239
-    SetBorderColor 139 21 192
+    SetBorderColor 164 28 224
     SetFontSize 42
     PlayAlertSound 6 201
+    MinimapIcon 2 Brown Diamond
+    PlayEffect Blue Temp
+
+# ------------------------------------
+# Perandus
+# ------------------------------------
+
+Show # $x->PerandusCoin $Currency->Special
+    StackSize >= 15
+    Class "Currency"
+    BaseType "Perandus Coin"
+    SetTextColor 255 202 94
+    SetBackgroundColor 166 113 51 230
+    SetBorderColor 255 202 94
+    SetFontSize 42
+
+Show # $x->PerandusCoin $Currency->Special %H3
+    StackSize < 4
+    Class "Currency"
+    BaseType "Perandus Coin"
+    SetTextColor 255 202 94
+    SetBackgroundColor 166 113 51 230
+    SetBorderColor 255 202 94
+    SetFontSize 36
 
 Show # $x->PerandusCoin $Currency->Special
     Class "Currency"
@@ -1696,7 +1930,11 @@ Show # $x->PerandusCoin $Currency->Special
     SetTextColor 255 202 94
     SetBackgroundColor 166 113 51 230
     SetBorderColor 255 202 94
-    SetFontSize 38
+    SetFontSize 40
+
+# ------------------------------------
+# Others
+# ------------------------------------
 
 Show # $Currency->Special %TB-Currency-NonDrop1
     Class "Currency"
@@ -1722,34 +1960,58 @@ Show # $Div->T4 %TB-Divination-Exception
 
 Show # $Div->T1 %TB-Divination-T1
     Class "Divination"
-    BaseType "Abandoned Wealth" "House of Mirrors" "Hunter's Reward" "Last Hope" "Mawr Blaidd" "Polymath" "Pride Before the Fall" "Spark and the Flame" "The Artist" "The Doctor" "The Dragon's Heart" "The Fiend" "The Immortal" "The Iron Bard" "The King's Heart" "The Last One Standing" "The Queen" "The Saint's Treasure" "The Sephirot" "The Spark and the Flame" "The Valkyrie" "The Vast" "The Wind" "The Wolf" "The Wolven King's Bite" "The World Eater" "Wealth and Power"
+    BaseType "Abandoned Wealth" "Heterochromia" "House of Mirrors" "Hunter's Reward" "Immortal Resolve" "Last Hope" "Mawr Blaidd" "Polymath" "Pride Before the Fall" "Spark and the Flame" "The Artist" "The Brittle Emperor" "The Celestial Justicar" "The Celestial Stone" "The Doctor" "The Dragon's Heart" "The Enlightened" "The Fiend" "The Formless Sea" "The Hunger" "The Immortal" "The Iron Bard" "The King's Heart" "The Last One Standing" "The Master" "The Mayor" "The Offering" "The Professor" "The Queen" "The Saint's Treasure" "The Samurai's Eye" "The Sephirot" "The Spark and the Flame" "The Undaunted" "The Valkyrie" "The Wind" "The Wolf" "The Wolven King's Bite" "The World Eater" "Wealth and Power" "Beauty Through Death" "The Endless Darkness" "Boon of the First Ones"
     SetTextColor 255 255 255
     SetBackgroundColor 101 143 169 # Divination Cards
     SetBorderColor 29 65 102 # Divination Cards
     SetFontSize 45
     PlayAlertSound 9 300
+    MinimapIcon 0 White Diamond
+    PlayEffect White
 
 Show # $Div->T2 %TB-Divination-T2
     Class "Divination"
-    BaseType "Bowyer's Dream" "Chaotic Disposition" "Heterochromia" "Left to Fate" "Saint's Treasure" "The Brittle Emperor" "The Cartographer" "The Celestial Justicar" "The Dreamer" "The Enlightened" "The Ethereal" "The Formless Sea" "The Hoarder" "The Hunger" "The Risk" "The Thaumaturgist" "The Void"
+    BaseType "Bowyer's Dream" "Chaotic Disposition" "Emperor of Purity" "Left to Fate" "Perfection" "Saint's Treasure" "The Breach" "The Cartographer" "The Dapper Prodigy" "The Dragon" "The Dreamer" "The Ethereal" "The Hale Heart" "The Hoarder" "The Jeweller's Boon" "The Obscured" "The Polymath" "The Risk" "The Thaumaturgist" "The Throne" "The Undisputed" "The Valley of Steel Boxes" "The Vast" "The Void" "Time-Lost Relic" "The Wilted Rose" "The Price of Protection" "The Twilight Moon"
     SetTextColor 255 255 255
     SetBackgroundColor 91 129 153 231 # Divination Cards
     SetBorderColor 29 65 102 # Divination Cards
     SetFontSize 42
     PlayAlertSound 9 300
+    MinimapIcon 1 White Diamond
+    PlayEffect White
 
 Show # $Div->T3 %TB-Divination-T3
     Class "Divination"
-    BaseType "Blessing of God" "Emperor of Purity" "Hope" "Humility" "Jack in the Box" "Lingering Remnants" "Lost Worlds" "Lucky Connections" "Lucky Deck" "Merciless Armament" "No Traces" "Rebirth" "Scholar of the Seas" "Standoff" "The Breach" "The Chains that Bind" "The Dapper Prodigy" "The Dark Mage" "The Fletcher" "The Forsaken" "The Inventor" "The Jester" "The Lion" "The Obscured" "The Offering" "The Polymath" "The Porcupine" "The Soul" "The Standoff" "The Surveyor" "The Throne" "The Trial" "The Union" "The Valley of Steel Boxes" "The Warlord" "The Wrath" "The Wretched" "Time-Lost Relic" "Valley of Steel Boxes" "Vinia's Token" "Wolven King's Bite"
+    BaseType "Audacity" "Blessing of God" "Blind Venture" "Earth Drinker" "Gemcutter's Promise" "Glimmer of Hope" "Harmony of Souls" "Hope" "Hubris" "Humility" "Jack in the Box" "Lingering Remnants" "Lost Worlds" "Lucky Connections" "Lucky Deck" "Merciless Armament" "No Traces" "Rats" "Rebirth" "Scholar of the Seas" "Shard of Fate" "Standoff" "The Admirer" "The Aesthete" "The Avenger" "The Beast" "The Blazing Fire" "The Body" "The Chains that Bind" "The Cursed King" "The Dark Mage" "The Darkest Dream" "The Demoness" "The Dreamland" "The Encroaching Darkness" "The Fletcher" "The Forsaken" "The Gladiator" "The Insatiable" "The Inventor" "The Jester" "The Lion" "The One With All" "The Penitent" "The Poet" "The Porcupine" "The Realm" "The Road to Power" "The Soul" "The Standoff" "The Surveyor" "The Sword King's Salute" "The Traitor" "The Trial" "The Tyrant" "The Warlord" "The Wrath" "The Wretched" "Treasure Hunter" "Valley of Steel Boxes" "Vinia's Token" "The Cacophony" "The Innocent"
     SetTextColor 255 255 255
     SetBackgroundColor 91 129 153 225 # Divination Cards
     SetBorderColor 29 65 102 # Divination Cards
     SetFontSize 40
     PlayAlertSound 9 300
+    MinimapIcon 2 White Diamond
+    PlayEffect White Temp
+
+Show # $Div->T4Currency %HS5 %TB-Divination-T4Currency
+    Class "Divination"
+    BaseType "Coveted Possession" "Emperor's Luck" "Loyalty" "The Catalyst" "The Gemcutter" "The Survivalist" "The Union" "Three Faces in the Dark" "Three Voices"
+    SetTextColor 255 255 255
+    SetBackgroundColor 91 129 153 225 # Divination Cards
+    SetBorderColor 29 65 102 # Divination Cards
+    SetFontSize 40
+    PlayAlertSound 9 300
+    MinimapIcon 2 White Diamond
+    PlayEffect White Temp
 
 Show # $Div->T5 %H3 %TB-Divination-T5
     Class "Divination"
-    BaseType "A Mother's Parting Gift" "Anarchy's Price" "Birth of the Three" "Carrion Crow" "Cartographer's Delight" "Death" "Dying Anguish" "Hermit" "King's Blade" "Lantador's Lost Love" "Light and Truth" "Metalsmith's Gift" "Might is Right" "Other Cheek" "Prosperity" "Rain of Chaos" "Rain Tempter" "Struck by Lightning" "The Blazing Fire" "The Coming Storm" "The Conduit" "The Eye of the Dragon" "The Feast" "The Incantation" "The Inoculated" "The Lich" "The Lover" "The Lunaris Priestess" "The Oath" "The Rabid Rhoa" "The Ruthless Ceinture" "The Scarred Meadow" "The Scholar" "The Sigil" "The Siren" "The Surgeon" "The Tower" "The Twins" "The Warden" "The Wolverine" "Thunderous Skies" "Volatile Power"
+    BaseType "A Mother's Parting Gift" "Anarchy's Price" "Birth of the Three" "Carrion Crow" "Cartographer's Delight" "Death" "Dying Anguish" "Hermit" "King's Blade" "Lantador's Lost Love" "Light and Truth" "Metalsmith's Gift" "Might is Right" "Other Cheek" "Prosperity" "Rain of Chaos" "Rain Tempter" "Struck by Lightning" "The Army of Blood" "The Coming Storm" "The Conduit" "The Eye of the Dragon" "The Feast" "The Incantation" "The Inoculated" "The Lich" "The Lover" "The Lunaris Priestess" "The Metalsmith's Gift" "The Oath" "The Rabid Rhoa" "The Ruthless Ceinture" "The Scarred Meadow" "The Scholar" "The Sigil" "The Siren" "The Surgeon" "The Tower" "The Twins" "The Warden" "The Wolverine" "Thunderous Skies" "Volatile Power"
+    SetTextColor 255 255 255
+    SetBackgroundColor 91 129 153 210 # Divination Cards
+    SetBorderColor 29 65 102 # Divination Cards
+
+Show # $Div->T5Currency %H4 %TB-Divination-T5Currency
+    Class "Divination"
+    BaseType "Rain of Chaos" "The Puzzle" "The Scholar"
     SetTextColor 255 255 255
     SetBackgroundColor 91 129 153 210 # Divination Cards
     SetBorderColor 29 65 102 # Divination Cards
@@ -1793,6 +2055,8 @@ Show # $x->Legacy->LeagueStone->T1 %TB-Leaguestone-Value
     SetBorderColor 130 134 196 # Leaguestones
     SetFontSize 45
     PlayAlertSound 2 300
+    MinimapIcon 1 Blue Circle
+    PlayEffect Yellow
 
 Show # $x->Legacy->LeagueStone->T2
     Rarity >= Magic
@@ -1802,6 +2066,8 @@ Show # $x->Legacy->LeagueStone->T2
     SetBorderColor 130 134 196 # Leaguestones
     SetFontSize 38
     PlayAlertSound 2 300
+    MinimapIcon 2 Blue Circle
+    PlayEffect Yellow Temp
 
 Show #  $x->Legacy->LeagueStone->T3 %TB-Leaguestone-Value
     ItemLevel >= 67
@@ -1813,6 +2079,8 @@ Show #  $x->Legacy->LeagueStone->T3 %TB-Leaguestone-Value
     SetBorderColor 130 134 196 # Leaguestones
     SetFontSize 40
     PlayAlertSound 2 300
+    MinimapIcon 2 Blue Circle
+    PlayEffect White Temp
 
 Show #  $x->Legacy->LeagueStone->T4 %HS4
     Rarity = Normal
@@ -1840,6 +2108,8 @@ Show # $uniques->T2
     SetBorderColor 48 26 1 237
     SetFontSize 45
     PlayAlertSound 10 300
+    MinimapIcon 1 White Star
+    PlayEffect White
 
 Show # $uniques->T1
     LinkedSockets = 6
@@ -1849,6 +2119,8 @@ Show # $uniques->T1
     SetBorderColor 190 105 9 # Uniques
     SetFontSize 45
     PlayAlertSound 6 300
+    MinimapIcon 0 Yellow Star
+    PlayEffect Brown
 
 # ------------------------------------
 # Harbinger - Pieces
@@ -1856,11 +2128,13 @@ Show # $uniques->T1
 
 Show # $uniques->Harbinger
     Class "Piece"
-    SetTextColor 99 137 255 # Harbinger Piece
-    SetBackgroundColor 24 38 99 246 # Harbinger Piece
-    SetBorderColor 64 106 237 # Harbinger Piece
+    SetTextColor 99 107 255 # Harbinger Piece
+    SetBackgroundColor 23 22 94 246 # Harbinger Piece
+    SetBorderColor 78 64 237 # Harbinger Piece
     SetFontSize 45
     PlayAlertSound 3 300
+    MinimapIcon 1 Blue Hexagon
+    PlayEffect Blue
 
 # ------------------------------------
 # Tier 1 uniques
@@ -1868,12 +2142,14 @@ Show # $uniques->Harbinger
 
 Show # $uniques->T1 %TB-Uniques-T1
     Rarity = Unique
-    BaseType "Callous Mask" "Carnal Sceptre" "Clutching Talisman" "Crusader Boots" "Ezomyte Tower Shield" "Glorious Plate" "Grand Mana Flask" "Greatwolf Talisman" "Legion Gloves" "Occultist's Vestment" "Prismatic Jewel" "Prophecy Wand" "Rawhide Boots" "Rawhide Tower Shield" "Ritual Sceptre" "Rotfeather Talisman" "Royal Axe" "Ruby Flask" "Sanctified Life Flask" "Sapphire Flask" "Wereclaw Talisman"
+    BaseType "Ambush Mitts" "Callous Mask" "Cloth Belt Piece" "Clutching Talisman" "Crusader Boots" "Ezomyte Tower Shield" "Glorious Plate" "Grand Mana Flask" "Greatwolf Talisman" "Harlequin Mask" "Hydrascale Gauntlets" "Prismatic Jewel" "Prophecy Wand" "Rawhide Boots" "Rawhide Tower Shield" "Rotfeather Talisman" "Royal Axe" "Ruby Flask" "Sanctified Life Flask" "Sanctified Mana Flask" "Sapphire Flask" "Sharkskin Tunic" "Thorium Spirit Shield" "Wereclaw Talisman"
     SetTextColor 230 126 7 # Valuable Uniques
     SetBackgroundColor 114 62 0 # Valuable Uniques
     SetBorderColor 230 126 7 # Valuable Uniques
     SetFontSize 45
     PlayAlertSound 4 300
+    MinimapIcon 0 Yellow Star
+    PlayEffect Brown
 
 # ------------------------------------
 # Tier 2 uniques
@@ -1884,18 +2160,22 @@ Show # $uniques->T2
     Rarity = Unique
     SetTextColor 190 105 9 # Uniques
     SetBackgroundColor 66 38 6 242 # Uniques - Tier 2
-    SetBorderColor 27 162 155
+    SetBorderColor 190 105 9 # Uniques
     SetFontSize 42
     PlayAlertSound 16 300
+    MinimapIcon 1 Yellow Star
+    PlayEffect Brown Temp
 
 Show # $uniques->T2 %TB-Uniques-T2
     Rarity = Unique
-    BaseType "Arcanist Gloves" "Arcanist Slippers" "Clasped Mitts" "Cutlass" "Destiny Leather" "Full Wyrmscale" "Jewelled Foil" "Nubuck Boots" "Nubuck Gloves" "Sacrificial Garb" "Savant's Robe" "Siege Axe" "Thorium Spirit Shield" "Vaal Mask" "Vaal Spirit Shield" "Void Axe" "Wyrmscale Doublet"
+    BaseType "Arcanist Slippers" "Clasped Mitts" "Sacrificial Garb" "Savant's Robe" "Vaal Mask" "Archon Kite Shield Piece" "Assassin's Boots" "Bismuth Flask" "Blood Raiment" "Blunt Arrow Quiver Piece" "Carnal Boots" "Gemstone Sword" "Hydrascale Boots" "Legion Gloves" "Magistrate Crown" "Occultist's Vestment" "Ritual Sceptre"
     SetTextColor 190 105 9 # Uniques
     SetBackgroundColor 66 38 6 242 # Uniques - Tier 2
     SetBorderColor 190 105 9 # Uniques
     SetFontSize 42
     PlayAlertSound 16 300
+    MinimapIcon 1 Yellow Star
+    PlayEffect Brown Temp
 
 # ------------------------------------
 # Multi-Unique bases.
@@ -1909,6 +2189,8 @@ Show # $uniques->MultiBase %TB-Uniques-T2-MultiBase
     SetBorderColor 190 105 9 # Uniques
     SetFontSize 40
     PlayAlertSound 3 300
+    MinimapIcon 2 Yellow Star
+    PlayEffect Brown Temp
 
 # ------------------------------------
 # Prophecy-Material Uniques
@@ -1946,6 +2228,8 @@ Show # $quest
     SetBorderColor 74 230 58 # Quest Items
     SetFontSize 44
     PlayAlertSound 2 300
+    MinimapIcon 1 Green Star
+    PlayEffect Green
 
 Show # $quest
     Class "Quest"
@@ -1955,6 +2239,8 @@ Show # $quest
     SetBorderColor 74 230 58 # Quest Items
     SetFontSize 44
     PlayAlertSound 2 300
+    MinimapIcon 1 Green Star
+    PlayEffect Green
 
 Show # $quest
     Class "Quest"
@@ -1963,6 +2249,8 @@ Show # $quest
     SetBorderColor 74 230 58 # Quest Items
     SetFontSize 44
     PlayAlertSound 2 300
+    MinimapIcon 1 Green Star
+    PlayEffect Green
 
 # ===============================================================================================================
 # Flasks
@@ -2148,12 +2436,36 @@ Show # %D5
 
 Show # %D4
     Quality >= 5
+    ItemLevel <= 28
+    DropLevel <= 24
+    Rarity = Normal
+    Class "Utility Flasks"
+    BaseType "Quicksilver Flask"
+    SetTextColor 200 200 200
+    SetBackgroundColor 6 54 34 231 # Utility Flasks
+    SetBorderColor 25 135 95 # Utility Flasks
+    SetFontSize 45
+    PlayEffect Green Temp
+
+Show # %D4
+    ItemLevel <= 28
+    DropLevel <= 24
+    Rarity = Magic
+    Class "Utility Flasks"
+    BaseType "Quicksilver Flask"
+    SetTextColor 0 194 133 # Utility Flasks
+    SetBackgroundColor 6 54 34 231 # Utility Flasks
+    SetBorderColor 255 255 255 0
+    SetFontSize 45
+    PlayEffect Green Temp
+
+Show # %D4
     Rarity = Normal
     Class "Utility Flasks"
     SetTextColor 200 200 200
     SetBackgroundColor 6 54 34 231 # Utility Flasks
-    SetBorderColor 25 135 95 # Utility Flasks
-    SetFontSize 40
+    SetBorderColor 50 200 125 0
+    SetFontSize 36
 
 Show # %D4
     Quality >= 5
@@ -2194,13 +2506,14 @@ Show # %REMS1 %D5
     SetBackgroundColor 0 10 0
     SetBorderColor 27 162 155
     SetFontSize 42
+    PlayEffect Yellow Temp
 
 Show # %REMS1 %D5
     Rarity = Rare
     Class "Rings" "Amulets" "Belts"
     SetBackgroundColor 0 10 0
-    SetBorderColor 162 150 27
-    SetFontSize 42
+    SetBorderColor 153 142 28
+    SetFontSize 40
 
 Show # %D5
     ItemLevel < 30
@@ -2208,7 +2521,7 @@ Show # %D5
     Class "Boots"
     SetBackgroundColor 0 10 0
     SetBorderColor 171 171 171
-    SetFontSize 42
+    SetFontSize 40
 
 Show # %D5
     Height = 2
@@ -2218,8 +2531,15 @@ Show # %D5
     SetBorderColor 128 128 128
     SetFontSize 40
 
+Show # %D4
+    Rarity = Rare
+    Class "Sceptres" "Daggers" "Wands"
+    SetBackgroundColor 0 10 0
+    SetBorderColor 128 128 128
+    SetFontSize 40
+
 # ------------------------------------
-# Leveling Rares
+# Progression
 # ------------------------------------
 
 Show # %D3
@@ -2326,59 +2646,85 @@ Show # %D3
 
 Show # %D3 %RVR %REMS1
     LinkedSockets >= 4
+    ItemLevel <= 24
     Rarity = Normal
     SetTextColor 255 255 255
     SetBackgroundColor 0 0 0
-    SetBorderColor 0 140 240
+    SetBorderColor 27 162 155
     SetFontSize 40
+    PlayEffect White Temp
 
 Show
     LinkedSockets >= 4
+    ItemLevel <= 24
     Rarity = Magic
     SetTextColor 30 144 255
     SetBackgroundColor 0 0 0
-    SetBorderColor 30 144 255
+    SetBorderColor 27 162 155
     SetFontSize 40
+    PlayEffect Blue Temp
 
 # ------------------------------------
-# Act 1 Gear
+# Linked Gear - 3 Links
 # ------------------------------------
 
-Show # %TB-Leveling-Trinkets-Phys %D3 %RVR
+Show
+    LinkedSockets >= 3
     ItemLevel <= 12
     Rarity = Normal
-    BaseType "Iron Ring" "Rustic Sash"
     SetTextColor 255 255 255
     SetBackgroundColor 0 0 0
-    SetBorderColor 100 100 100
+    SetBorderColor 0 120 120
     SetFontSize 38
 
 Show
+    LinkedSockets >= 3
     ItemLevel <= 12
     Rarity = Magic
-    BaseType "Iron Ring" "Rustic Sash"
-    SetTextColor 30 144 255
+    SetTextColor 25 95 235
     SetBackgroundColor 0 0 0
-    SetBorderColor 100 100 100
+    SetBorderColor 0 120 120
     SetFontSize 38
+
+# ------------------------------------
+# Leveling - MAGIC
+# ------------------------------------
+
+Show
+    Height <= 2
+    Width <= 2
+    ItemLevel <= 36
+    Rarity <= Magic
+    SetTextColor 136 136 255 185
+    SetBackgroundColor 0 0 0 185
+    SetBorderColor 0 0 0
+
+Show
+    Height <= 4
+    Width <= 1
+    ItemLevel <= 36
+    Rarity <= Magic
+    SetTextColor 136 136 255 185
+    SetBackgroundColor 0 0 0 185
+    SetBorderColor 0 0 0
 
 Show # %TB-Leveling-Trinkets-Life %D3 %RVR
     ItemLevel <= 16
     Rarity = Normal
-    BaseType "Coral Ring" "Leather Belt" "Sapphire Ring"
+    Class "Belts" "Rings" "Amulets"
     SetTextColor 255 255 255
     SetBackgroundColor 0 0 0
-    SetBorderColor 100 100 100
-    SetFontSize 38
+    SetBorderColor 255 255 255 0
+    SetFontSize 40
 
 Show
     ItemLevel <= 16
     Rarity = Magic
-    BaseType "Coral Ring" "Leather Belt" "Sapphire Ring"
+    Class "Belts" "Rings" "Amulets"
     SetTextColor 30 144 255
     SetBackgroundColor 0 0 0
-    SetBorderColor 100 100 100
-    SetFontSize 38
+    SetBorderColor 255 255 255 0
+    SetFontSize 40
 
 Show # %D3
     ItemLevel <= 12
@@ -2386,8 +2732,8 @@ Show # %D3
     Class "Boots"
     SetTextColor 30 144 255
     SetBackgroundColor 0 0 0
-    SetBorderColor 100 100 100
-    SetFontSize 38
+    SetBorderColor 255 255 255 0
+    SetFontSize 40
 
 Show # %D3
     ItemLevel <= 12
@@ -2396,27 +2742,34 @@ Show # %D3
     SetTextColor 30 144 255
     SetBackgroundColor 0 0 0
     SetBorderColor 0 0 0 0
-    SetFontSize 35
+    SetFontSize 38
+
+Show
+    ItemLevel <= 16
+    Rarity <= Magic
+    SetBorderColor 50 50 50
+    SetFontSize 38
 
 # ------------------------------------
 # Jewellery
 # ------------------------------------
 
 Show
+    ItemLevel <= 24
     Rarity <= Magic
     BaseType "Ruby Ring" "Topaz Ring" "Two-Stone Ring" "Coral Ring" "Onyx Amulet"
     SetBorderColor 50 50 50
     SetFontSize 36
 
 Show
-    ItemLevel <= 32
+    ItemLevel <= 24
     Rarity <= Magic
     BaseType "Leather Belt" "Rustic Sash" "Heavy Belt"
     SetBorderColor 50 50 50
     SetFontSize 36
 
 Show
-    ItemLevel <= 32
+    ItemLevel <= 24
     Rarity <= Magic
     BaseType "Amber Amulet" "Jade Amulet" "Lapis Amulet" "Turquoise Amulet" "Citrine Amulet" "Onyx Amulet" "Agate Amulet"
     SetBorderColor 50 50 50
@@ -2433,7 +2786,7 @@ Show
     SetBorderColor 0 0 0
     SetFontSize 36
 
-Show
+Hide
     ItemLevel <= 24
     Rarity <= Magic
     BaseType "Serrated Arrow Quiver" "Two-Point Arrow Quiver"
@@ -2441,18 +2794,18 @@ Show
     SetBorderColor 0 0 0
 
 # ------------------------------------
-# Magic Gear
+# Progression
 # ------------------------------------
 
 Show
     ItemLevel <= 32
-    Rarity = Magic
+    Rarity <= Magic
     Class "Rings" "Amulets" "Belts"
     SetFontSize 38
 
 Show
-    ItemLevel <= 9
-    DropLevel >= 5
+    ItemLevel <= 5
+    DropLevel >= 3
     Rarity <= Magic
     Class "Two Hand" "Bows" "One Hand" "Wand" "Sceptre" "Staves" "Claws" "Daggers" "Boots" "Gloves" "Helmets"
     SetBackgroundColor 0 0 0 185
@@ -2498,19 +2851,19 @@ Show
     SetBackgroundColor 0 0 0 185
     SetBorderColor 0 0 0
 
-Show
-    ItemLevel <= 22
-    DropLevel >= 20
-    Rarity <= Magic
-    Class "Two Hand" "Bows" "One Hand" "Wand" "Sceptre" "Staves" "Claws" "Daggers" "Boots" "Gloves" "Helmets"
-    SetBackgroundColor 0 0 0 185
+#Show
+#    ItemLevel <= 22
+#    DropLevel >= 20
+#    Rarity <= Magic
+#    Class "Two Hand" "Bows" "One Hand" "Wand" "Sceptre" "Staves" "Claws" "Daggers" "Boots" "Gloves" "Helmets"
+#    SetBackgroundColor 0 0 0 185
 
-Show
-    ItemLevel <= 24
-    DropLevel >= 22
-    Rarity <= Magic
-    Class "Two Hand" "Bows" "One Hand" "Wand" "Sceptre" "Staves" "Claws" "Daggers" "Boots" "Gloves" "Helmets"
-    SetBackgroundColor 0 0 0 185
+#Show
+#    ItemLevel <= 24
+#    DropLevel >= 22
+#    Rarity <= Magic
+#    Class "Two Hand" "Bows" "One Hand" "Wand" "Sceptre" "Staves" "Claws" "Daggers" "Boots" "Gloves" "Helmets"
+#    SetBackgroundColor 0 0 0 185
 
 # ===============================================================================================================
 # Hide Remaining Items
